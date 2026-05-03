@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.classList.add('hidden');
                 document.body.classList.add('loaded');
                 initLenis();
+                initHeroVideoScrub();
                 initGSAPAnimations();
                 initSplitting();
                 initTilt();
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 initSwiper();
                 initLottieSteps();
                 initContactForm();
-                initHeroVideoScrub()
+                
             }, 400);
         }
     });
