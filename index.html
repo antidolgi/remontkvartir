@@ -111,14 +111,22 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero__video-wrapper">
-                <video autoplay muted loop playsinline class="hero__video">
-                    <source src="assets/video/hero.webm" type="video/webm">
-                    <source src="assets/video/hero.mp4" type="video/mp4">
-                    <!-- Постер на случай отсутствия видео -->
-                    <img src="assets/img/hero-placeholder.jpg" alt="Интерьер до и после ремонта">
-                </video>
-                <div class="hero__overlay"></div>
-            </div>
+                <div class="hero__video-wrapper">
+    <!-- Три видео слоя -->
+    <video class="hero__video hero__video--1" muted loop playsinline>
+        <source src="assets/video/hero.webm" type="video/webm">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <video class="hero__video hero__video--2" muted loop playsinline>
+        <source src="assets/video/hero1.webm" type="video/webm">
+        <source src="assets/video/hero1.mp4" type="video/mp4">
+    </video>
+    <video class="hero__video hero__video--3" muted loop playsinline>
+        <source src="assets/video/hero2.webm" type="video/webm">
+        <source src="assets/video/hero2.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+</div>
             <div class="hero__content container">
                 <h1 class="hero__title">Ремонт,<br>в который<br>вы влюбитесь</h1>
                 <p class="hero__subtitle">Дизайнерский ремонт квартир под ключ с фиксированной сметой и гарантией 3 года</p>
