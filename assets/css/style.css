@@ -120,10 +120,18 @@ img, video {
     z-index: 0;
 }
 .hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.3s linear; /* плавное затухание, если scrub не справляется */
 }
+/* Начальные состояния прозрачности */
+.hero__video--1 { opacity: 1; }
+.hero__video--2 { opacity: 0; }
+.hero__video--3 { opacity: 0; }
 .hero__overlay {
     position: absolute;
     inset: 0;
