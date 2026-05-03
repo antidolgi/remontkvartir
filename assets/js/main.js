@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Меняем картинку при смене типа ремонта (ещё до расчёта)
         const previewMap = {
-            cosmetic: '/assets/img/calculator-default.jpg',
-            euro: '/assets/img/calculator-euro.jpg',
-            design: '/assets/img/calculator-euro.jpg' // позже можно отдельную
+            cosmetic: 'assets/img/calculator-default.jpg',
+            euro: 'assets/img/calculator-euro.jpg',
+            design: 'assets/img/calculator-euro.jpg' // позже можно отдельную
         };
         typeSelect.addEventListener('change', () => {
             const type = typeSelect.value;
