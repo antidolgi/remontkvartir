@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 initSwiper();
                 initLottieSteps();
                 initContactForm();
+                initHeroVideoScrub()
             }, 400);
         }
     });
@@ -51,6 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Обновление ScrollTrigger при скролле
         lenis.on('scroll', ScrollTrigger.update);
     }
+    /* ========== 3 VIDEO ========== */
+    function initHeroVideoScrub() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
+
+    const video1 = document.querySelector('.hero__video--1');
+    const video2 = document.querySelector('.hero__video--2');
+    const video3 = document.querySelector('.hero__video--3');
+    if (!video1 || !video2 || !video3) return;
+
+    // Запускаем все видео сразу (они будут играть фоном)
+    [video1, video2, video3].forEach(v => v.play().catch(() => {}));
+
+    // Создаём таймлайн, привязанный к скроллу по секции hero
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: heroSection,
+            start: 'top top',    // начинаем, когда верх hero касается верха окна
+            end: 'bottom top',   // заканчиваем, когда низ hero уходит за верх окна
+            scrub: 1.5,          // плавное ведение за скроллом
+            // markers: true,    // раскомментировать для отладки
+        }
+    });
+
+    // Анимация прозрачности: видео сменяют друг друга
+    // 0% - 33% скролла: показываем video1, скрываем остальные
+    tl.fromTo(video1, { opacity: 1 }, { opacity: 0, duration: 0.33 }, 0)
+      .fromTo(video2, { opacity: 0 }, { opacity: 1, duration: 0.33 }, 0.33)
+      .fromTo(video2, { opacity: 1 }, { opacity: 0, duration: 0.34 }, 0.66)
+      .fromTo(video3, { opacity: 0 }, { opacity: 1, duration: 0.34 }, 0.66);
+}
 
     /* ========== GSAP + SCROLLTRIGGER ANIMATIONS ========== */
     function initGSAPAnimations() {
