@@ -434,12 +434,27 @@ img, video {
 .portfolio-swiper .swiper-slide {
     background: #f0f0f0;
     border-radius: var(--radius);
-    height: 200px;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
     font-size: 1.2rem;
+    position: relative;
+}
+.portfolio-swiper img {
+    width: 100%;
+    height: 250px;          /* фиксированная высота, можно изменить */
+    object-fit: cover;
+    display: block;
+}
+.slide-caption {
+    margin: 15px 0 20px;
+    font-weight: 600;
+    color: var(--color-heading);
+    text-align: center;
+    padding: 0 20px;
 }
 
 /* ========== STEPS ========== */
